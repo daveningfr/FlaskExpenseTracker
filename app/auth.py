@@ -12,7 +12,7 @@ auth = Blueprint('auth', __name__)
 # TODO: insert root url ('/') codes here
 @auth.route('/')
 def home():
-   render_template("home.html")
+   return render_template("home.html")
 
 @auth.route('/signup', methods=['GET','POST'])
 def signup():
@@ -30,4 +30,4 @@ def login():
 # @login_required
 def logout():
     logout_user()
-    return redirect(url_for('auth.home'))
+    return redirect(url_for('home.html'))
