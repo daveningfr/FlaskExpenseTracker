@@ -12,7 +12,7 @@ auth = Blueprint('auth', __name__)
 # TODO: insert root url ('/') codes here
 @auth.route('/')
 def home():
-   return """<h1>hello world</h1>"""
+   render_template("home.html")
 
 @auth.route('/signup', methods=['GET','POST'])
 def signup():
