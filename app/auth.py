@@ -5,10 +5,14 @@ from flask import Blueprint, flash, render_template, request, url_for, redirect
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
 auth = Blueprint('auth', __name__)
 
 
 # TODO: insert root url ('/') codes here
+@auth.route('/')
+def home():
+   return """<h1>hello world</h1>"""
 
 @auth.route('/signup', methods=['GET','POST'])
 def signup():
